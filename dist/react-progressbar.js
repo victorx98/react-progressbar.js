@@ -1,16 +1,16 @@
 (function (global, factory) {
     if (typeof define === "function" && define.amd) {
-        define(['module', 'react', 'react-dom', 'lodash.isequal', 'progressbar.js'], factory);
+        define(['module', 'react', 'create-react-class', 'react-dom', 'lodash.isequal', 'progressbar.js'], factory);
     } else if (typeof exports !== "undefined") {
-        factory(module, require('react'), require('react-dom'), require('lodash.isequal'), require('progressbar.js'));
+        factory(module, require('react'), require('create-react-class'), require('react-dom'), require('lodash.isequal'), require('progressbar.js'));
     } else {
         var mod = {
             exports: {}
         };
-        factory(mod, global.react, global.reactDom, global.lodash, global.progressbar);
+        factory(mod, global.react, global.createReactClass, global.reactDom, global.lodash, global.progressbar);
         global.main = mod.exports;
     }
-})(this, function (module, React, ReactDom, isEqual, ProgressBar) {
+})(this, function (module, React, createReactClass, ReactDom, isEqual, ProgressBar) {
     'use strict';
 
     var _extends = Object.assign || function (target) {
@@ -27,7 +27,7 @@
         return target;
     };
 
-    var Shape = React.createClass({
+    var Shape = createReactClass({
         displayName: 'Shape',
 
         getDefaultProps: function getDefaultProps() {
@@ -119,21 +119,21 @@
         }
     });
 
-    var Line = React.createClass({
+    var Line = createReactClass({
         displayName: 'Line',
         render: function render() {
             return React.createElement(Shape, _extends({}, this.props, { ShapeClass: ProgressBar.Line }));
         }
     });
 
-    var Circle = React.createClass({
+    var Circle = createReactClass({
         displayName: 'Circle',
         render: function render() {
             return React.createElement(Shape, _extends({}, this.props, { ShapeClass: ProgressBar.Circle }));
         }
     });
 
-    var SemiCircle = React.createClass({
+    var SemiCircle = createReactClass({
         displayName: 'SemiCircle',
         render: function render() {
             return React.createElement(Shape, _extends({}, this.props, { ShapeClass: ProgressBar.SemiCircle }));

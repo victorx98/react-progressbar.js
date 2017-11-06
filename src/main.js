@@ -1,9 +1,10 @@
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactDom = require('react-dom');
 var isEqual = require('lodash.isequal');
 var ProgressBar = require('progressbar.js');
 
-var Shape = React.createClass({
+var Shape = createReactClass({
     getDefaultProps: function getDefaultProps() {
         return {
             ShapeClass: null,
@@ -96,19 +97,19 @@ var Shape = React.createClass({
     }
 });
 
-var Line = React.createClass({
+var Line = createReactClass({
     render() {
         return <Shape {...this.props} ShapeClass={ProgressBar.Line} />;
     }
 });
 
-var Circle = React.createClass({
+var Circle = createReactClass({
     render() {
         return <Shape {...this.props} ShapeClass={ProgressBar.Circle} />;
     }
 });
 
-var SemiCircle = React.createClass({
+var SemiCircle = createReactClass({
     render() {
         return <Shape {...this.props} ShapeClass={ProgressBar.SemiCircle} />;
     }
